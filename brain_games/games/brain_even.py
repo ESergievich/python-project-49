@@ -2,24 +2,23 @@
 
 import random
 import prompt
+from scripts.greet import greet
 
 
 def even():
-    name = prompt.string('May I have your name? ')
-    print(f'Hello, {name}!')
-    print('Answer "yes" if the number is even, otherwise answer "no".')
+    greet()
     for _ in range(3):
         num = random.randint(1, 100)
         print(f'Question: {num}')
-        answ = prompt.string('Your answer: ')
+        ans = prompt.string('Your answer: ')
         if num % 2 == 0:
             real_answ = 'yes'
         else:
             real_answ = 'no'
-        if real_answ == answ:
+        if real_answ == ans:
             print('Correct!')
         else:
-            return f"""{answ} is wrong answer ;(. Correct answer was {real_answ}.
+            return f"""{ans} is wrong answer ;(. Correct answer was {real_answ}.
 Let's try again, {name}!"""
     return f'Congratulations, {name}!'
 
