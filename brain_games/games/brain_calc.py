@@ -6,6 +6,7 @@ from brain_games.scripts import brain_models
 
 def calc():
     name = brain_models.greet()
+    print('What is the result of the expression?')
     for _ in range(3):
         num_one, num_two = random.randint(1, 100), random.randint(1, 100)
         op = random.choice(['+', '-', '*'])
